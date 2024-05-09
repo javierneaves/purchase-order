@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand navbar-light bg-light d-flex">
+        <div class="nav navbar-nav justify-content-between align-items-center">
+          <a class="nav-item nav-link active" href="#" aria-current="page"
+            >PO TRACKER <span class="visually-hidden">(current)</span></a
+          >
+          <a class="nav-item nav-link" href="#">SFWW PO</a>
+        </div>
+      </nav>
+    </header>
+    <main id="app">
+      
+      <div class="container mt-5">
+          <h3>SFWW PO</h3>
+          <div class="accordion mb-4" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  PO DATA
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row justify-content-end mb-2 border-bottom p-3">
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <span class="input-group-text col-4" id="basic-addon1">PO & INV. #</span>
+                        <input type="text" class="form-control" id="po-inv" placeholder="Enter PO & INV. #" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group">
+                        <span class="input-group-text col-4" id="basic-addon1">PO Issue Date</span>
+                        <input type="date" class="form-control" aria-label="issue date" aria-describedby="PO Issue date" readonly id="poDateIssue">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-end mb-2 border-bottom p-3">
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <span for="buyer" class="input-group-text col-4">BUYER</span>
+                        <select class="form-control" id="buyer" required>
+                          <option value="">Select Buyer</option>
+                          <option value="buyer1">Buyer 1</option>
+                          <option value="buyer2">Buyer 2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <label for="customer" class="input-group-text col-4">CUSTOMER</label>
+                        <select class="form-control" id="customer" required>
+                          <option value="">Select Customer</option>
+                          <option value="customer1">Customer 1</option>
+                          <option value="customer2">Customer 2</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-start mb-2 border-bottom p-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-1">
+                          <label for="season" class="input-group-text col-5">SEASON</label>
+                          <input type="text" class="form-control" id="season" placeholder="Enter Season" required>
+                        </div>
+                        <div class="input-group mb-1">
+                          <label for="customer-po" class="input-group-text col-5">CUSTOMER PO</label>
+                          <input type="text" class="form-control" id="customer-po" placeholder="Enter Customer PO" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <label for="factory-ex-date" class="input-group-text col-5">FACTORY EX DATE</label>
+                        <input type="date" class="form-control" id="factory-ex-date" required>
+                      </div>
+                      <div class="input-group mb-1">
+                        <label for="customer-indc" class="input-group-text col-5">CUSTOMER INDC</label>
+                        <input type="date" class="form-control" id="customer-indc" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <label for="factory-vendor" class="input-group-text col-5">FACTORY / VENDOR</label>
+                        <select class="form-control" id="factory-vendor" required>
+                          <option value="">Select Factory / Vendor</option>
+                          <option value="factory1">Factory 1</option>
+                          <option value="factory2">Factory 2</option>
+                        </select>
+                      </div>
+                      <div class="input-group mb-1">
+                        <label for="ship-mode" class="input-group-text col-5">SHIP MODE</label>
+                        <select class="form-control" id="ship-mode" required>
+                          <option value="">Select Ship Mode</option>
+                          <option value="mode1">Mode 1</option>
+                          <option value="mode2">Mode 2</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-start mb-3 border-bottom p-3">
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <label for="po-revision-date" class="input-group-text col-6">PO REVISION DATE</label>
+                        <input type="date" class="form-control" id="po-revision-date" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="input-group mb-1">
+                        <label for="po-revision-reason" class="input-group-text col-6">PO REVISION REASON</label>
+                        <input type="text" class="form-control" id="po-revision-reason" placeholder="Enter PO Revision Reason" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3 border-bottom p-2">
+                    <div class="input-group">
+                      <span class="input-group-text">Comments</span>
+                      <textarea class="form-control" id="po-comments" aria-label="Comments"></textarea>
+                    </div>
+                  </div>
+                  <div class="row mb-3 p-2">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="saveDataBtn"
+                    >
+                      SAVE DATA
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  PO DETAILS
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row border-bottom mb-2">
+                    <p id="vendor-title"><strong>VENDOR:</strong></p>
+                    <p id="vendor-name">SABIO PRINTING - LUIS</p>
+                    <p id="vendor-address">"2511 W. LA PALMA AVENUE<br>UNIT T<br>ANAHEIM, CA 92801   USA"</p>
+                  </div>
+                  <div class="row border-bottom mb-2">
+                    <p id="ship-to-title"><strong>SHIP TO:</strong></p>
+                    <p id="ship-to-name">SOUTH ORANGE COUNTY COMMUNITY COLLEGE DISTRICT</p>
+                    <p id="ship-to-address">"IRVINE VALLEY COLLEGE WAREHOUSE<br>5500 IRVINE CENTER DRIVE<br>IRVINE, CA 92618-0301   USA"</p>
+                  </div>
+                  <div class="row- border-bottom mb-2">
+                    <p id="payment-method-title">PAYMENT METHOD: CREDIT CARD</p>
+                    <p id="payment-terms-title">PAYMENT TERMS: COD</p>
+                    <p id="freight-terms-title">FREIGHT TERMS: EXW</p>
+                    <p id="port-of-origin-title">PORT OF ORIGIN: ANAHEIM</p>
+                    <p id="country-of-origin-title">COUNTRY OF ORIGIN: USA</p>
+                    <p id="ship-method-title">SHIP METHOD: PICK UP</p>
+                    <p id="freight-forwarder-title">FREIGHT FORWARDER: CHECK WITH CHRIS OR SEAN</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  PO PRODUCTS
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse p-2" data-bs-parent="#accordionExample">
+                
+                <div id="cardsContainer">
+                  <div class="card mb-2" >
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col-md-4 mb-2">
+                        <div class="input-group">
+                          <span class="input-group-text col-4">
+                            STYLE #
+                          </span>
+                          <input type="text" class="form-control" placeholder="ENTER STYLE #" required id="prodCardStyle">
+                        </div>
+                      </div>
+                      <div class="col-md-8 mb-2">
+                        <div class="input-group">
+                          <span class="input-group-text col-4">
+                            DESCRIPTION:
+                          </span>
+                          <input type="text" class="form-control" placeholder="ENTER DESCRIPTION" required id="prodCardDesc">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text col-4">
+                            SIZE GRID
+                          </span>
+                          <select class="form-select" id="sizeGrid">
+                            <option></option>
+                            <option value="XS-2XL">XS-2XL</option>
+                            <option value="3XL-6XL">3XL-6XL</option>
+                            <option value="28-38">28-38</option>
+                            <option value="40-44">40-44</option>
+                            <option value="S/M-L/XL">S/M-L/XL</option>
+                            <option value="OSFA">OSFA</option>
+                            <option value="N/A">N/A</option>
+                          </select>
+                        </div>
+                        <div class="row">
+                          <div class="col-12" id="sizeGridContainer">
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text col-3">
+                              COST $
+                            </span>
+                            <input type="number" class="form-control" id="costValue">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-group mb-3">
+                            <span class="input-group-text col-3">
+                              QTY
+                            </span>
+                            <input type="number" class="form-control" id="qtyValue" disabled>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="row" >
+                      <div class="col-6 text-align-end">
+                        <h4 id="totalRow"></h4>
+                      </div>
+                      <div class="col-6 text-align-end">
+                        <div class="d-grid gap-2">
+                          <button
+                            type="button"
+                            name="addProductButton"
+                            id="addProductButton"
+                            class="btn btn-outline-primary"
+                          >
+                            ADD PRODUCT
+                          </button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  
+                </div>
+                <div id="productsContainer">
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="container">
+          <div class="row">
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button
+                    type="button"
+                    name="savePO"
+                    id="savePO"
+                    class="btn btn-primary"
+                  >
+                    Save PO
+                  </button>
+                </div>
+                
+              </div>
+              <div class="col-6">
+                <div class="d-grid gap-2">
+                  <button
+                    type="button"
+                    name="sendPoByMail"
+                    id="sendPoByMail"
+                    class="btn btn-secondary"
+                  >
+                    Send PO by Mail
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+          
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+      ></script>
+      
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+          ></script>
+          <script>
+            			let sizeGrid = document.getElementById('sizeGrid').value;
+                  let sizeGridContainer = document.getElementById('sizeGridContainer');
+                  let prodCardStyle = document.getElementById('prodCardStyle');
+                  let prodCardDesc = document.getElementById('prodCardDesc');
+                  let productsContainer = document.getElementById('productsContainer');
+                  let addProductButton = document.getElementById('addProductButton');
+                  let arrayOfValues = {}
+                  let selectedValue
+                  let prodRowid = 0
+                  let poData = {
+                    prodRow: {},
+                    poInfo: {}
+                  }
+                  let nextId = 0;
+                  let saveDataBtn = document.getElementById('saveDataBtn');
+
+                  saveDataBtn.addEventListener('click', function (e) {
+                    const poInv = document.getElementById('po-inv').value;
+                    const poDateIssue = document.getElementById('poDateIssue').value;
+                    const buyer = document.getElementById('buyer').value;
+                    const customer = document.getElementById('customer').value;
+                    const season = document.getElementById('season').value;
+                    const customerPo = document.getElementById('customer-po').value;
+                    const factoryexdate = document.getElementById('factory-ex-date').value;
+                    const customerIndc = document.getElementById('customer-indc').value;
+                    const factoryVendor = document.getElementById('factory-vendor').value;
+                    const shipMode = document.getElementById('ship-mode').value;
+                    const poRevisionDate = document.getElementById('po-revision-date').value;
+                    const poRevisionReason = document.getElementById('po-revision-reason').value;
+                    const poComments = document.getElementById('po-comments').value;
+                    poData.poInfo = {
+                      poInv: poInv,
+                      poDateIssue: poDateIssue,
+                      buyer: buyer,
+                      customer: customer,
+                      season: season,
+                      customerPo: customerPo,
+                      factoryexdate: factoryexdate,
+                      customerIndc: customerIndc,
+                      factoryVendor: factoryVendor,
+                      shipMode: shipMode,
+                      poRevisionDate: poRevisionDate,
+                      poRevisionReason: poRevisionReason,
+                      poComments: poComments
+                    };
+                    console.log(poData);
+                  });
+
+                  document.getElementById('sizeGrid').addEventListener('change', function() {
+                    sizeGridContainer.innerHTML = ''
+                    selectedValue = this.value;
+                    console.log("Valor seleccionado:", selectedValue);
+                    
+                    var sizeGridArrange = [ [ 'SIZE GRID' ],
+                                        [ 'XS-2XL', 'XS', 'S', 'M', 'L', 'XL', '2XL' ],
+                                        [ '3XL-6XL', '3XL', '4XL', '5XL', '6XL' ],
+                                        [ '28-38', 28, 30, 32, 33, 34, 36, 38 ],
+                                        [ '40-44', 40, 42, 44 ],
+                                        [ 'S/M-L/XL', 'S/M', 'L/XL' ],
+                                        [ 'OSFA', 'OSFA' ] 
+                    ];
+                    
+                    sizeGridArrange.slice(1).forEach(function(item) {
+                      if (item[0] === selectedValue) {
+                        item.slice(1).forEach(function(size) {
+                          var divCol = document.createElement('div');
+                          divCol.classList.add('col-md-6');
+                          
+                          var divInputGroup = document.createElement('div');
+                          divInputGroup.classList.add('input-group', 'mb-1');
+                          
+                          var spanInputGroupText = document.createElement('span');
+                          spanInputGroupText.classList.add('input-group-text', 'col-6');
+                          spanInputGroupText.textContent = size;
+                          
+                          var inputFormControl = document.createElement('input');
+                          inputFormControl.setAttribute('type', 'number');
+                          inputFormControl.classList.add('form-control');
+                          inputFormControl.classList.add('sizeGridValue');
+                          inputFormControl.setAttribute('placeholder', 'Qty');
+                          inputFormControl.value = 0
+                          
+                          divInputGroup.appendChild(spanInputGroupText);
+                          divInputGroup.appendChild(inputFormControl);
+                          divCol.appendChild(divInputGroup);
+                          inputFormControl.addEventListener('change', function (e) {
+                            calculateTotals('N')
+                          });
+                          document.getElementById('sizeGridContainer').appendChild(divCol);
+                        });
+
+                        let costValue = document.getElementById('costValue');
+
+                        costValue.addEventListener('change', function (e) {
+                          calculateTotals('N')
+                        });
+                      }
+                    });
+
+                  });
+                  
+                  addProductButton.addEventListener('click', function (e) {
+                    let totalRow = document.getElementById('totalRow');
+                    if(totalRow.innerHTML === ''){
+                      console.log('add total value');
+                      return
+                    } 
+
+                    calculateTotals('Y')
+                    
+                  });
+
+                  function calculateTotals(cc){
+                    let sizeGridValue = document.querySelectorAll('.sizeGridValue');
+                    let qtyValue = document.getElementById('qtyValue');
+                    let totalRow = document.getElementById('totalRow');
+                    let addProductButton = document.getElementById('addProductButton');
+                    let totalRowValue = 0
+                    let sumOfSize = 0
+                    let sizeArray = []
+                    sizeGridValue.forEach(function(item) {
+                        let totalValue = !item.value ? 0 : item.value
+                        sumOfSize = sumOfSize + parseFloat(totalValue)
+                        const spanCercano = item.previousElementSibling;
+                        sizeArray.push([spanCercano.innerHTML, item.value])
+                    });
+
+                    qtyValue.value = sumOfSize
+                    totalRow.innerHTML = 'Total: $' + parseFloat(sumOfSize * costValue.value)
+                    totalRowValue = parseFloat(sumOfSize * costValue.value)
+                    
+                    
+                    arrayOfValues = {
+                      id: nextId,
+                      prodCardStyle: prodCardStyle.value,
+                      prodCardDesc: prodCardDesc.value,
+                      sizeGrid: selectedValue,
+                      costValue: costValue.value,
+                      qtyValue: qtyValue.value,
+                      totalRow: totalRowValue,
+                      sizeArray: sizeArray
+                    }
+                    poData.prodRow
+                    
+                    if(totalRowValue === 0){
+                      console.log('alert no value');
+                      return
+                    } else if(cc==='Y'){
+                      addProductButton.disabled = true
+                      createCotRowCard()
+                      // Agregar arrayOfValues a poData.prodRow
+                      poData.prodRow[nextId] = arrayOfValues;
+                      nextId++;
+                    }
+                                          
+                  }
+                  
+                  function createCotRowCard(){
+                    let productsContainer = document.getElementById('productsContainer');
+                    prodCardStyle.value = ''
+                    prodCardDesc.value = ''
+                    document.getElementById('sizeGrid').value = ''
+                    costValue.value = ''
+                    qtyValue.value = ''
+                    totalRow.innerHTML = ''
+                    sizeGridContainer.innerHTML = ''
+                    addProductButton.disabled = false
+                    const cardHTML = `
+                      <div class="card mb-2" id='${prodRowid}'>
+                        <div class="card-header">
+                          <div class="row">
+                            <p class="col-4">Style # <strong>${arrayOfValues.prodCardStyle}</strong> </p>
+                            <p class="col-8">Description: <strong>${arrayOfValues.prodCardDesc}</strong> </p>
+                          </div>
+                        </div>
+                        <div class="card-body p-2">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <p>Size grid: <strong>${arrayOfValues.sizeGrid}</strong></p>
+                              <p>
+                                Size Array:
+                                <strong>${arrayOfValues.sizeArray.map(item => `${item[0]}: ${item[1]}`).join(', ')}</strong>
+                              </p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                              <div class="col-4">
+                                <p>Cost: $<strong>${arrayOfValues.costValue}</strong></p>
+                              </div>
+                              <div class="col-4">
+                                <p>Qty: <strong>${arrayOfValues.qtyValue}</strong></p>
+                              </div>
+                              <div class="col-4">
+                                <p>Total: 
+                                  $
+                                  <strong>${arrayOfValues.totalRow}</strong></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <div class="d-flex justify-content-evenly">
+                            <button type="button" class="btn btn-outline-danger deleteProdBtn" data-rowid = '${prodRowid}' >Delete</button>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                    productsContainer.innerHTML += cardHTML
+                    prodRowid++
+
+                    let deleteProdBtn = document.querySelectorAll('.deleteProdBtn');
+                    deleteProdBtn.forEach(function(item) {
+                      item.addEventListener('click', function (e) {
+                        let rIdToDelete = e.target.dataset.rowid
+                        deleteProdRow(rIdToDelete);
+                      });
+                    });
+                    console.log(poData);
+                  }
+
+                  function deleteProdRow(row){
+
+                    let cardToDelete = document.getElementById(row);
+                    cardToDelete.remove()
+                    delete poData.prodRow[row];
+                  }
+
+                 
+                
+
+          </script>
+  </body>
+</html>
+
