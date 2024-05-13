@@ -562,8 +562,40 @@
                     cardToDelete.remove()
                     delete poData.prodRow[row];
                   }
+                  let savePO = document.getElementById('savePO');
+                  savePO.addEventListener('click', function (e) {
+                    // Ejemplo de uso
+                    const urlServidor = 'https://script.google.com/macros/s/AKfycbyh51bCQTHoR4on8Ic-KAOr1kqnbUIqymSnD6A68eSGG3cBH7B-pwAtMNYZtmjamErS/exec';
+                    const datos = { nombre: 'Ejemplo', edad: 30 };
+                    enviarDatosPOST(urlServidor, datos);
+                  });
+                  // enviar datos desde
+                  const enviarDatosPOST = async (url, datos) => {
+                    try {
+                      const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(datos),
+                      })
+                      .then(response => response.json())
+                      .then(data => console.log(data))
+                      .catch(error => console.error('Error:', error));
+                      if (response.ok) {
+                        const respuesta = await response.text();
+                        console.log('Respuesta del servidor:', respuesta);
+                      } else {
+                        console.error('Error al enviar datos al servidor:', response.statusText);
+                      }
+                    } catch (error) {
+                      console.error('Error de red:', error);
+                    }
+                  };
 
-                 
+
+                  
+
                 
 
           </script>
