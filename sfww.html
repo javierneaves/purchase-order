@@ -565,7 +565,7 @@
                   let savePO = document.getElementById('savePO');
                   savePO.addEventListener('click', function (e) {
                     // Ejemplo de uso
-                    const urlServidor = 'https://script.google.com/macros/s/AKfycbyh51bCQTHoR4on8Ic-KAOr1kqnbUIqymSnD6A68eSGG3cBH7B-pwAtMNYZtmjamErS/exec';
+                    const urlServidor = 'https://script.google.com/macros/s/AKfycbxPkD14dWvL6ESa7Zf416DocOTxk1zzju42mpEsCOg6_tB6Pw1N6XEVcT7Y3PuGv3lJ/exec';
                     const datos = { nombre: 'Ejemplo', edad: 30 };
                     enviarDatosPOST(urlServidor, datos);
                   });
@@ -574,6 +574,7 @@
                     try {
                       const response = await fetch(url, {
                         method: 'POST',
+                        //mode: 'no-cors',
                         headers: {
                           'Content-Type': 'application/json',
                         },
